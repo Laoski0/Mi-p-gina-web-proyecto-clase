@@ -1,3 +1,4 @@
+/* === Estilos muy sencillos para empezar === */
 :root{
   --bg: #0f172a;        /* gris azulado oscuro */
   --card: #111827;      /* gris oscuro */
