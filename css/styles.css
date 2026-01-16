@@ -1,0 +1,113 @@
+/* === Estilos muy sencillos para empezar === */
+:root{
+  --bg: #0f172a;        /* gris azulado oscuro */
+  --card: #111827;      /* gris oscuro */
+  --text: #e5e7eb;      /* gris claro */
+  --muted: #9ca3af;     /* gris medio */
+  --primary: #38bdf8;   /* azul */
+  --ok: #22c55e;        /* verde */
+  --wip: #f59e0b;       /* ámbar */
+  --hold: #ef4444;      /* rojo */
+}
+
+*{ box-sizing:border-box; }
+
+html, body{
+  margin:0;
+  padding:0;
+  background: linear-gradient(180deg, #0b1023, var(--bg));
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
+  line-height: 1.5;
+}
+
+.site-header{
+  text-align:center;
+  padding: 2.5rem 1rem 1rem;
+}
+
+h1{
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin: 0.2rem 0 0.4rem;
+}
+
+.subtitle{
+  color: var(--muted);
+  margin: 0 auto 1.25rem;
+  max-width: 48rem;
+}
+
+.hero-logo{
+  width: 160px;
+  height: auto;
+  display:block;
+  margin: 0.5rem auto 0;
+  filter: drop-shadow(0 4px 20px rgba(56,189,248,.35));
+}
+
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.grid-2{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 720px){
+  .grid-2{ grid-template-columns: 1fr 1fr; }
+}
+
+h2{
+  margin-top: 2rem;
+  font-size: clamp(1.25rem, 3.5vw, 1.8rem);
+  border-left: 6px solid var(--primary);
+  padding-left: .6rem;
+}
+
+h3{ margin-bottom: .25rem; }
+
+code{ background: #0b1226; padding: .1rem .35rem; border-radius: .35rem; }
+
+/* === Tabla sencilla === */
+.nice-table{
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+.nice-table th, .nice-table td{
+  padding: .75rem .9rem;
+  text-align: left;
+  border-bottom: 1px solid #1f2937;
+}
+.nice-table thead th{
+  background: #0b1226;
+  color: var(--text);
+  font-weight: 600;
+}
+.nice-table tr:last-child td{ border-bottom: none; }
+.nice-table tbody tr:hover{ background: #0f1a36; }
+
+.status{
+  padding: .15rem .5rem;
+  border-radius: .4rem;
+  font-size: .85rem;
+}
+.status.ok{ background: color-mix(in oklab, var(--ok) 20%, transparent); border: 1px solid var(--ok); }
+.status.wip{ background: color-mix(in oklab, var(--wip) 20%, transparent); border: 1px solid var(--wip); }
+.status.hold{ background: color-mix(in oklab, var(--hold) 20%, transparent); border: 1px solid var(--hold); }
+
+.site-footer{
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem 1rem 3rem;
+  font-size: .95rem;
+  border-top: 1px dashed #1f2937;
+  margin-top: 2rem;
+}
